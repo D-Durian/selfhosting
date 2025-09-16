@@ -1,0 +1,21 @@
+# Docker/Compose
+.env
+*.env
+*.bak
+*.backup
+secrets/
+certs/
+backups/
+*.db
+*.sqlite
+*.log
+*.pem
+*.crt
+*.key
+# VSCode
+.vscode/
+# System
+.DS_Store
+Thumbs.db
+# Portainer
+portainer_data/

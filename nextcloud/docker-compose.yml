@@ -1,0 +1,28 @@
+# Beispiel docker-compose für Nextcloud
+version: '3.8'
+services:
+  nextcloud:
+    image: nextcloud:latest
+    container_name: nextcloud
+    restart: unless-stopped
+    volumes:
+      - ./nc-data:/var/www/html
+    environment:
+      - MYSQL_PASSWORD=changeme
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+    ports:
+      - 8081:80
+  db:
+    image: mariadb:latest
+    container_name: nextcloud-db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=changeme
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=changeme
+    volumes:
+      - ./db-data:/var/lib/mysql
+# ...

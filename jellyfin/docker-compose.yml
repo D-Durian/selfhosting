@@ -1,0 +1,14 @@
+# Beispiel docker-compose für Jellyfin
+version: '3.8'
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - ./media:/media
+    ports:
+      - 8096:8096
+# ...
