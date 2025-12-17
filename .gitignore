@@ -19,3 +19,5 @@ backups/
 Thumbs.db
 # Portainer
 portainer_data/
+
+private/
